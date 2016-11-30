@@ -1,0 +1,26 @@
+﻿@model BucketList.Models.ListCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ListCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ListCategories)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListCategories)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ListCategoryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

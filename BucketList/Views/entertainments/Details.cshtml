@@ -1,0 +1,59 @@
+﻿@model BucketList.Models.Entertainment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Entertainment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EntertainmentsType.EntertainmentsType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntertainmentsType.EntertainmentsType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Add To Bucket List", "AddToUserList", new { id = Model.EntertainmentId }) |
+    @Html.ActionLink("See Who Else", "SeeWhoElse", new { id = Model.EntertainmentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

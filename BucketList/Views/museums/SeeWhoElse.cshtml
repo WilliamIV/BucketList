@@ -1,0 +1,18 @@
+﻿@model BucketList.Models.Museum
+
+@{
+    ViewBag.Title = "SeeWhoElse";
+}
+
+<h2>SeeWhoElse</h2>
+
+<div id="team">
+
+    @foreach (var user in ViewBag.whoUser)
+    {
+        <p>@user.UserName</p>
+
+    }
+
+
+</div>

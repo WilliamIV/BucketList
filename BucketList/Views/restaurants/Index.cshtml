@@ -1,0 +1,59 @@
+﻿@model IEnumerable<BucketList.Models.Restaurants>
+@section AddToHead{
+    
+<link href="~/Content/Restaurant.css" rel="stylesheet" />
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dining Bucket List Home</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+            <div id="listBG">
+                <div class="caption">
+
+                    <p>
+                        <h5>@Html.DisplayNameFor(model => model.RestraurantsType.RestraurantsType)</h5>
+                        @Html.DisplayFor(modelItem => item.RestraurantsType.RestraurantsType)
+                    </p>
+
+                    <p>
+                        <h5>@Html.DisplayNameFor(model => model.Title)</h5>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </p>
+
+                    <p>
+                        <h5>@Html.DisplayNameFor(model => model.Description)</h5>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+
+                    <p>
+                        <h5>@Html.DisplayNameFor(model => model.Location)</h5>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </p>
+
+                    <p>
+                        <h5>@Html.DisplayNameFor(model => model.Link)</h5>
+                        @Html.DisplayFor(modelItem => item.Link)
+                    </p>
+
+
+                    <br />
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RestaurantId }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.RestaurantId }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RestaurantId })
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

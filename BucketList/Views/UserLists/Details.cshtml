@@ -1,0 +1,65 @@
+﻿<link href="~/Content/UserListSS.css" rel="stylesheet" />
+@model BucketList.Models.UserList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="thumbnail">
+        <div id="listBG">
+            <div class="caption">
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.ListCategories.ListCategories)</h5>
+                    @Html.DisplayFor(model => model.ListCategories.ListCategories)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Title)</h5>
+                    @Html.DisplayFor(model => model.Title)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Description)</h5>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.ItemCategory)</h5>
+                    @Html.DisplayFor(model => model.ItemCategory)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Link)</h5>
+                    @Html.DisplayFor(model => model.Link)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Location)</h5>
+                    @Html.DisplayFor(model => model.Location)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.UserIsComplete)</h5>
+                    @Html.DisplayFor(model => model.UserIsComplete)
+                </p>
+
+                @*@Html.DisplayNameFor(model => model.ApplicationUserId)
+                    @Html.DisplayFor(model => model.ApplicationUserId)*@
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ListId }, new { @class = "btn btn-default btn-sm" }) 
+
+            </div>
+        </div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>    
+</div>
+

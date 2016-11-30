@@ -1,0 +1,77 @@
+﻿<link href="~/Content/UserListSS.css" rel="stylesheet" />
+@model BucketList.Models.UserList
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to remove this item from your Bucket List?</h3>
+<div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="thumbnail">
+        <div id="listBG">
+            <div class="caption">
+
+                @*<p>
+                        <h5>@Html.DisplayNameFor(model => model.ListCategories.ListCategories)</h5>
+                        @Html.DisplayFor(model => model.ListCategories.ListCategories)
+                    </p>*@
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Title)</h5>
+                    @Html.DisplayFor(model => model.Title)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Description)</h5>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+
+
+                @*<p>
+                    <h5>@Html.DisplayNameFor(model => model.ItemCategory)</h5>
+                    @Html.DisplayFor(model => model.ItemCategory)
+                </p>*@
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Link)</h5>
+                    @Html.DisplayFor(model => model.Link)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Location)</h5>
+                    @Html.DisplayFor(model => model.Location)
+                </p>
+
+
+                @*<p>
+                        <h5>@Html.DisplayNameFor(model => model.UserIsComplete)</h5>
+                        @Html.DisplayFor(model => model.UserIsComplete)
+                    </p>*@
+
+
+                @*<p>
+                        <h5>@Html.DisplayNameFor(model => model.ApplicationUserId)</h5>
+                        @Html.DisplayFor(model => model.ApplicationUserId)
+                    </p>*@
+
+
+                @using (Html.BeginForm())
+            {
+                    @Html.AntiForgeryToken()
+
+                        <input type="submit" value="Delete" class="btn btn-default btn-sm" />
+                        
+                    <div class="form-actions no-color">
+                    </div>
+                }
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+</div>

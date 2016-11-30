@@ -1,0 +1,66 @@
+﻿<link href="~/Content/UserListSS.css" rel="stylesheet" />
+<script src="~/Scripts/map.js"></script>
+@model IEnumerable<BucketList.Models.UserList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Bucket List</h2>
+
+<div class="fb-share-button" data-href="https://localhost:44312/UserLists/Index" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocalhost%3A44312%2FUserLists%2FIndex&amp;src=sdkpreparse">Share</a></div>
+
+<p>@Html.ActionLink("Create New", "Create")</p>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+            <div id="listBG">
+                <div class="caption">
+
+                    @*<p><h5>@Html.DisplayNameFor(model => model.ListCategories.ListCategories)</h5> @Html.DisplayFor(modelItem => item.ListCategories.ListCategories)</p>*@
+
+                    <p><h5>@Html.DisplayNameFor(model => model.Title)</h5> @Html.DisplayFor(modelItem => item.Title)</p>
+
+                    <p><h5>@Html.DisplayNameFor(model => model.Description)</h5> @Html.DisplayFor(modelItem => item.Description)</p>
+
+                    @*<p><h5>@Html.DisplayNameFor(model => model.ItemCategory)</h5> @Html.DisplayFor(modelItem => item.ItemCategory)</p>*@
+
+                    <p><h5>@Html.DisplayNameFor(model => model.Link)</h5> <a href="http://@item.Link" target="_blank">@item.Link</a></p>
+
+                    <p><h5>@Html.DisplayNameFor(model => model.Location)</h5> @Html.DisplayFor(modelItem => item.Location)</p>
+
+                    <p>
+                        <h5>@Html.DisplayNameFor(m => m.UserIsComplete)</h5>
+                            @if (item.UserIsComplete)
+                            {
+                                <span class="fa fa-graduation-cap fa-lg" aria-hidden="true"></span>
+                            }
+                            else
+                            {
+                                <span class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></span>                               
+                            }
+
+                       
+                        <br />
+
+                    @*<p><h5>@Html.DisplayNameFor(model => model.ApplicationUserId)</h5> @Html.DisplayFor(modelItem => item.ApplicationUserId)</p>*@
+                        <br />
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ListId }, new { @class = "btn btn-default btn-sm" }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.ListId }, new { @class = "btn btn-default btn-sm" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ListId }, new { @class = "btn btn-default btn-sm" }) 
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@* Google Maps API 
+<input id="pac-input" class="controls" type="text" placeholder="Bucket List Destination">
+<div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0HgPFTiuyuSXg_UYoDOX8vV6a2t3c_zg&libraries=places&callback=initAutocomplete"
+        async defer></script>*@

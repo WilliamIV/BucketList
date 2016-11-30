@@ -1,0 +1,26 @@
+﻿@model BucketList.Models.MuseumType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MuseumType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MuseumsType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MuseumsType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MuseumTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,67 @@
+﻿@model BucketList.Models.Restaurants
+@section AddToHead{
+
+    <link href="~/Content/Restaurant.css" rel="stylesheet" />
+}
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="thumbnail">
+        <div id="listBG">
+            <div class="caption">
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.RestraurantsType.RestraurantsType)</h5>
+                    @Html.DisplayFor(model => model.RestraurantsType.RestraurantsType)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Title)</h5>
+                    @Html.DisplayFor(model => model.Title)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Description)</h5>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.RestraurantsType)</h5>
+                    @Html.DisplayFor(model => model.RestraurantsType)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Link)</h5>
+                    @Html.DisplayFor(model => model.Link)
+                </p>
+
+
+                <p>
+                    <h5>@Html.DisplayNameFor(model => model.Location)</h5>
+                    @Html.DisplayFor(model => model.Location)
+                </p>
+
+
+                @*<p>
+                    <h5>@Html.DisplayNameFor(model => model.UserIsComplete)</h5>
+                    @Html.DisplayFor(model => model.UserIsComplete)
+                </p>*@
+
+                @*@Html.DisplayNameFor(model => model.ApplicationUserId)
+                    @Html.DisplayFor(model => model.ApplicationUserId)*@
+                @Html.ActionLink("Edit", "Edit", new { id = Model.RestaurantId }, new { @class = "btn btn-default btn-sm" })
+
+            </div>
+        </div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+
